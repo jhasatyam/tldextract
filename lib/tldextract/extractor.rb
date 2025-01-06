@@ -4,6 +4,7 @@ module TLDExtract
   class Extractor
     SCHEME_RE = /^([a-zA-Z][a-zA-Z0-9+.-]*:)?\/\//
     VALID_DOMAIN_CHARS = /^[a-zA-Z0-9.-]+$/
+    PUBLIC_SUFFIX_LIST_URL = 'https://publicsuffix.org/list/public_suffix_list.dat'
 
     def initialize
       @cache_file = File.join(Dir.home, '.tld_set')
