@@ -9,7 +9,7 @@ require 'byebug'
 
 
 module TLDExtract
-  class Error < StandardError; end
+  class DomainInvalidError < StandardError; end
 
   PUBLIC_SUFFIX_LIST_URL = 'https://publicsuffix.org/list/public_suffix_list.dat'
 
@@ -19,7 +19,11 @@ module TLDExtract
     end
 
     def extract(url, include_psl_private_domains: false)
-      instance.extract(url, include_psl_private_domains: include_psl_private_domains)
+      parsed_domain = instance.extract(url, include_psl_private_domains: include_psl_private_domains).registered_domain
+      if parsed_domain.nil?
+        raise DomainInvalidError.new("unable to parse domain: #{url}")
+      end
+      parsed_domain
     end
   end
 end
