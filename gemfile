@@ -1,0 +1,17 @@
+source 'https://rubygems.org'
+
+gemspec
+
+# Add Rails for development/testing
+gem 'rails', '~> 5.1.7'
+gem 'json', '~> 2.6.3'
+
+# Add these for Rails 6+ compatibility
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
+gem 'byebug'
+gem 'axlsx', '2.1.0.pre'
+gem 'axlsx_rails'
+gem 'roo', '~> 2.7'
+gem 'roo-xls'

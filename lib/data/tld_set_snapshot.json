@@ -1,0 +1,18 @@
+{
+  "public": [
+    "com",
+    "org",
+    "net",
+    "edu",
+    "gov",
+    "mil",
+    "co.uk"
+  ],
+  "private": [
+    "wixsite.com",
+    "blogspot.com",
+    "wordpress.com",
+    "github.io",
+    "herokuapp.com"
+  ]
+} 

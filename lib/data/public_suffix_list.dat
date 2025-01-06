@@ -1,0 +1,10 @@
+// This is a snapshot of the public suffix list
+// Source: https://publicsuffix.org/list/public_suffix_list.dat
+com
+co.uk
+org
+net
+edu
+gov
+mil
+// Add more common TLDs as needed 
