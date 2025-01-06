@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "tldextract"
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. For example:
+def test_url(url)
+  result = TLDExtract.extract(url)
+  puts "\nTesting URL: #{url}"
+  puts "Subdomain: #{result.subdomain}"
+  puts "Domain: #{result.domain}"
+  puts "Suffix: #{result.suffix}"
+  puts "FQDN: #{result.fqdn}"
+end
+
+# Start an IRB session
+require "irb"
+IRB.start(__FILE__) 

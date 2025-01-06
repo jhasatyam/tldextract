@@ -1,0 +1,17 @@
+{
+  "public": [
+    "com",
+    "org",
+    "net",
+    "edu",
+    "gov",
+    "mil",
+    "co.uk",
+    "org.uk",
+    "ac.uk"
+  ],
+  "private": [
+    "blogspot.com",
+    "wordpress.com"
+  ]
+}

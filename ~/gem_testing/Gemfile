@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+# Point to your local gem
+gem 'tldextract', path: '/path/to/your/tldextract' 
