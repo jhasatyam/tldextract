@@ -15,7 +15,7 @@ module TLDExtract
 
     def extract(url, include_psl_private_domains: false)
       @include_psl_private_domains = include_psl_private_domains
-      host = extract_hostname(url.to_s.strip)
+      host = extract_hostname(url.downcase.to_s.strip)
       return Result.new unless host.match?(VALID_DOMAIN_CHARS)
       matches = extract_domain_parts(host)
       Result.new(
