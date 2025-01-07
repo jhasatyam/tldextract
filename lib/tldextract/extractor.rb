@@ -7,7 +7,7 @@ module TLDExtract
     PUBLIC_SUFFIX_LIST_URL = 'https://publicsuffix.org/list/public_suffix_list.dat'
 
     def initialize
-      @cache_file = File.join(Dir.home, '.tld_set')
+      @cache_file = File.join("/tmp", '.tld_set')
       @suffix_list_urls = [PUBLIC_SUFFIX_LIST_URL]
       @fallback_to_snapshot = true
       load_trie

@@ -26,8 +26,8 @@ module TLDExtract
         domain_value = row[domain_column_index - 1].to_s # Adjust for zero-based index
 
         # Perform logic based on the domain value
-        domain_value_when_private_suffix_ignored = TLDExtract.extract(domain_value)
-        domain_value_when_private_suffix_not_ignored = TLDExtract.extract(domain_value, include_psl_private_domains: true)
+        domain_value_when_private_suffix_ignored = TLDExtract.registered_domain(domain_value)
+        domain_value_when_private_suffix_not_ignored = TLDExtract.registered_domain(domain_value, include_psl_private_domains: true)
 
         row << domain_value_when_private_suffix_ignored
         row << domain_value_when_private_suffix_not_ignored
