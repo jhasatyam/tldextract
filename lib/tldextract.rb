@@ -23,7 +23,7 @@ module TLDExtract
     end
 
     def registered_domain(url, include_psl_private_domains: false)
-      parsed_domain = extract(url, include_psl_private_domains)
+      parsed_domain = extract(url, include_psl_private_domains).registered_domain
       if parsed_domain.nil?
         raise TLDExtract::Error::DomainInvalidError.new("unable to parse domain: #{url}")
       end
