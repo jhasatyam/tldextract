@@ -18,8 +18,12 @@ module TLDExtract
       @instance ||= Extractor.new
     end
 
-    def extract(url, include_psl_private_domains: false)
-      parsed_domain = instance.extract(url, include_psl_private_domains: include_psl_private_domains).registered_domain
+    def extract(url, include_psl_private_domains)
+      instance.extract(url, include_psl_private_domains: include_psl_private_domains)
+    end
+
+    def registered_domain(url, include_psl_private_domains: false)
+      parsed_domain = extract(url, include_psl_private_domains)
       if parsed_domain.nil?
         raise TLDExtract::Error::DomainInvalidError.new("unable to parse domain: #{url}")
       end
