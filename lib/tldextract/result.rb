@@ -14,6 +14,7 @@ module TLDExtract
       "#{domain}.#{suffix}"
     end
 
+    # Not needed
     def fqdn
       parts = []
       parts << subdomain unless subdomain.empty?
@@ -22,6 +23,7 @@ module TLDExtract
       parts.join('.')
     end
 
+    # Not needed
     def to_s
       "Result(subdomain='#{subdomain}', domain='#{domain}', suffix='#{suffix}', is_private=#{is_private})"
     end

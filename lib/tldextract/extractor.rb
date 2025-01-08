@@ -71,8 +71,8 @@ module TLDExtract
       is_private = false
 
       reversed_labels.each_with_index do |label, i|
-        # Check for exact match or wildcard
-        next_node = node.matches[label] || node.matches['*']
+        # Check for exact match
+        next_node = node.matches[label]
         break unless next_node
 
         node = next_node
