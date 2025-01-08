@@ -3,7 +3,7 @@ require 'byebug'
 module TLDExtract
   class Extractor
     SCHEME_RE = /^([a-zA-Z][a-zA-Z0-9+.-]*:)?\/\//
-    VALID_DOMAIN_CHARS = /^[a-zA-Z0-9.-]+$/
+    VALID_DOMAIN_CHARS = /\A(?!.*[\s])(?!(?:.*\.\.)|(?:.*\s))([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}\z/
     PUBLIC_SUFFIX_LIST_URL = 'https://publicsuffix.org/list/public_suffix_list.dat'
 
     def initialize
